@@ -67,27 +67,46 @@ title: Event Details | Techverse
 </div>
 <!-- Features End -->
 <!-- Form Start -->
-<div class="container-xxl courses my-6 p-1">
+<div class="container-xxl courses my-6 p-1" id="RegistrationForm">
     <div class="container">
         <div class="row g-4 justify-content-center">
             <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div id="form_container" class="bg-primary text-center p-5">
                     <h1 class="mb-4">Register Now</h1>
+                    <div class="row g-3">
+                        <!-- radio to select type of registration -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <div id="reg_type" class="row g-3">
+                                    <div class="col-sm-6">
+                                        <input type="radio" id="meswcoe_student"
+                                            name="reg_type" value="meswcoe_student" checked required>
+                                        <label for="meswcoe_student">Register As MESWCOE Student</label><br>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="radio" id="outside" name="reg_type"
+                                            value="outside" required>
+                                        <label for="outside">Register As Outsider</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <form id="event_reg_form" method="post">
                         <input type="text" id="event_id" name="event" placeholder="event" value="1" hidden required>
                         <div class="row g-3">
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="text" name="name" class="form-control border-0" id="name"
-                                        placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
+                                        placeholder="Your Name*" required>
+                                    <label for="name">Your Name*</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="email" name="email" class="form-control border-0" id="email"
                                         placeholder="email@example.com" required>
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Your Email*</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -96,7 +115,7 @@ title: Event Details | Techverse
                                             placeholder="Child Name"> -->
                                     <select id="year" name="year" class="form-select border-0" required
                                         style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Year</option>
+                                        <option value="" disabled selected hidden>Select Year*</option>
                                         <option value="FE">FE</option>
                                         <option value="SE">SE</option>
                                         <option value="TE">TE</option>
@@ -108,7 +127,7 @@ title: Event Details | Techverse
                                 <div class="form-floating">
                                     <select id="dept" name="dept" class="form-select border-0" required
                                         style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Department</option>
+                                        <option value="" disabled selected hidden>Select Department*</option>
                                         <option value="Computer">Computer Dept</option>
                                         <option value="Electronics & Telecommunication">Electronics &
                                             Telecommunication Dept</option>
@@ -123,7 +142,7 @@ title: Event Details | Techverse
                                             placeholder="Child Name"> -->
                                     <select id="division" name="division" class="form-select border-0" required
                                         style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Division</option>
+                                        <option value="" disabled selected hidden>Select Division*</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -133,8 +152,8 @@ title: Event Details | Techverse
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" name="prn" class="form-control border-0" id="prn"
-                                        placeholder="F1234567" required>
-                                    <label for="prn">Your PRN</label>
+                                        placeholder="F1234567*" required>
+                                    <label for="prn">Your PRN*</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -143,6 +162,46 @@ title: Event Details | Techverse
                             </div>
                         </div>
                     </form>
+                    <form id="event_reg_form_outside" method="post" style="display: none;">
+                        <input type="text" id="event_id_outside" name="event_outside" placeholder="event" value="1"
+                            hidden required>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="name_outside" class="form-control border-0"
+                                        id="name_outside" placeholder="Your Name*" required>
+                                    <label for="name_outside">Your Name*</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" name="email_outside" class="form-control border-0"
+                                        id="email_outside" placeholder="email@example.com" required>
+                                    <label for="email_outside">Your Email*</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="company" class="form-control border-0" id="company"
+                                        placeholder="College/Company Name*" required>
+                                    <label for="company">College/Company Name*</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="dept_outside" class="form-control border-0"
+                                        id="dept_outside" placeholder="Enter Department/Domain Name*" required>
+                                    <label for="company">Department/Domain Name*</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-dark w-100 py-3" id="outside_form_submit_btn"
+                                    type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mt-2" style="float: left;">* Indicates Required</p>
                     <h4 id="error_msg" class="p-2 text-white text-xxl-center"></h4>
                 </div>
                 <div id="form_success" style="display: none;" class="bg-primary text-center p-5">
@@ -184,6 +243,17 @@ title: Event Details | Techverse
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
+    // handle change reg type
+    function handleRegTypeChange(){
+        var reg_type = document.querySelector('input[name="reg_type"]:checked').value;
+        if(reg_type === "meswcoe_student"){
+            document.getElementById('event_reg_form').style.display = "block";
+            document.getElementById('event_reg_form_outside').style.display = "none";
+        }else{
+            document.getElementById('event_reg_form').style.display = "none";
+            document.getElementById('event_reg_form_outside').style.display = "block";
+        }
+    }
     function handleNoEvent() {
         console.log("No Active Events Found");
         // redirect to no-active-event.html
@@ -210,6 +280,7 @@ title: Event Details | Techverse
     }
     function setEventDetails(event_details) {
         document.getElementById('event_id').value = event_details.ref_id;
+        document.getElementById('event_id_outside').value = event_details.ref_id;
         document.getElementById('event_domain').innerHTML = event_details.domain;
         document.getElementById('event_title').innerHTML = event_details.title;
         document.getElementById('event_desc').innerHTML = event_details.description;
@@ -271,6 +342,9 @@ title: Event Details | Techverse
         offLoading();
         await setEvent();
     };
+    document.querySelectorAll('input[name="reg_type"]').forEach((elem) => {
+        elem.addEventListener("change", handleRegTypeChange);
+    });
     document.getElementById('event_reg_form').addEventListener('submit', function (e) {
         setLoading("Registering For Event");
         e.preventDefault();
@@ -278,6 +352,26 @@ title: Event Details | Techverse
         var data = new FormData(e.target);
         fetch(url, { method: 'POST', body: data })
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
+            .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
+            .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
+        offLoading();
+    });
+    document.getElementById('event_reg_form_outside').addEventListener('submit', function (e) {
+        setLoading("Registering For Event");
+        e.preventDefault();
+        var newFormData = new FormData();
+        newFormData.append('event', document.getElementById('event_id_outside').value);
+        newFormData.append('name', document.getElementById('name_outside').value);
+        newFormData.append('email', document.getElementById('email_outside').value);
+        newFormData.append('company', document.getElementById('company').value);
+        newFormData.append('dept', document.getElementById('dept_outside').value);
+
+        var url = backend_url + "/api/register_for_event_outside";
+        fetch(url, { method: 'POST', body: newFormData })
+            .then(response => {
+                // console.log('Response:', response);
+                return response.ok ? response.json() : response.json().then(error => { throw error; });
+            })
             .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
         offLoading();
