@@ -1,0 +1,48 @@
+---
+layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
+title: Stall Reg Jhankaar24 | Techverse
+---
+<!-- include header -->
+{% include navbar.html %}
+<!-- content  -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header-events py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-3 text-white animated slideInDown mb-4">TechVerse Registration</h1>
+        <h3 class="display-6 text-white animated slideInDown mb-4">For Jhankaar'24 Fun Fair Stall</h3>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/events.html">Events</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/events/jhankaar/">Jhankaar</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="#">Stall Registration</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Courses Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 80%;">
+            <h6 class="text-primary text-uppercase mb-2">Register Here</h6>
+            <h1 class="display-6 mb-4">For Awesome Stall</h1>
+        </div>
+        
+    </div>
+</div>
+<!-- Courses End -->
+
+<script type="module">
+    import { backend_url, setLoading, offLoading } from '/js/script.js';
+    
+    document.getElementById("nav-events").classList.add("active");
+    window.onload = async () => {
+        await getActiveEvents();
+        await getPastEvents();
+        offLoading();
+    };
+</script>
+<!-- include footer -->
+{% include footer.html %}
