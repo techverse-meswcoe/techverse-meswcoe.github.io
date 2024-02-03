@@ -1,2 +1,3 @@
-Checkout Our Upcoming Event on Git/Github <a href="/events.html"> Here</a>
-Checkout Our Past Event on AI/ML <a href="/events.html"> Here</a> 
+Register For TechVerse's Stunning Stall @ Jhankaar24 <a href="/events/jhankaar/registration">Here</a>
+Checkout Our Past Events <a href="/events.html"> Here</a> 
+See More About Jhankaar 2024 <a href="/events/jhankaar/">Here</a>
